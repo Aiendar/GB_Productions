@@ -1,0 +1,51 @@
+
+#day1 {
+	position: fixed;
+	top:50px;
+	left:5px;
+	width:200px;
+	height: 550px;
+	background-color: white;
+	color:black;
+}
+
+#day2{
+	position: fixed;
+	top:50px;
+	left:210px;
+	width:200px;
+	height: 550px;
+	background-color: white;
+	color:black;
+}
+#day3{
+	position: fixed;
+	top:50px;
+	left:415px;
+	width:200px;
+	height: 550px;
+	background-color: white;
+	color:black;
+}
+#day4{
+	position: fixed;
+	top:50px;
+	left:620px;
+	width:200px;
+	height: 550px;
+	background-color: white;
+	color:black;
+}
+#day5{
+	position: fixed;
+	top:50px;
+	left:825px;
+	width:200px;
+	height: 550px;
+	background-color: white;
+	color:black;
+}
+
+.days{
+	width:1px;
+}

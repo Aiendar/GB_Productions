@@ -1,0 +1,53 @@
+
+
+#maindiv{
+	min-width: 985px;
+	min-height: 625px;
+	background-color: #555555;
+}
+
+header{
+	min-width: 985px;
+}
+
+.eventsLi{
+	border-bottom: solid #555555 2px;
+}
+
+.day{
+	font-size: 1em;
+	float: left;
+	background-color: #ffffff;
+	margin:0px;
+	width: 19%;
+	border: solid #555555 2px;
+	height: 75%;
+	display: inline-block;
+	min-height: 582px;
+}
+
+#day1{
+	margin-left: 10px;
+}
+
+.addEvent{
+	margin-top: 150px;
+	margin-left: 20px;
+	float:left;
+	margin-left: 3px;
+	color:white;
+	padding: 8px;
+	padding-left: 50px;
+	padding-right: 50px;
+	text-align: center;
+	background-color: #555;
+}
+
+.addEvent:hover{
+	background-color: #000;
+}
+
+.newEvent{
+	text-align: center;
+}
+

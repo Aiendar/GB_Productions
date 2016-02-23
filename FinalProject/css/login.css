@@ -1,0 +1,16 @@
+header{
+	text-align: center;
+}
+#loginBox{
+	text-align: center;
+	width: 80%;
+	height: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #555;
+	
+}
+
+input{
+	border: solid grey 2px;
+}
