@@ -1,0 +1,16 @@
+#users{
+	padding-left: 10%;
+	min-width: 100px;
+}
+
+#to{
+	margin-left: 10%;
+	min-width: 1000px;
+}
+
+#from{
+	text-align: right;
+	margin-right:150px;
+	min-width:100px;
+
+}

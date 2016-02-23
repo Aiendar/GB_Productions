@@ -1,0 +1,112 @@
+
+#maindiv{
+	font-size: 16;
+	overflow: auto;
+	background-color: #555;
+}
+
+#message{
+	font-family: helvetica;
+	border: solid #555 3px;
+	background-color: #fff;
+	margin: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	min-height: 200px;
+	width: 500px;
+	overflow: auto;
+}
+
+#messageStream{
+	border: none;
+	background-color: #555;
+	min-height: 80%;
+	width: 80%;
+	/*overflow: auto;*/
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+
+}
+
+#newpost{
+	border: solid #555 3px;
+	background-color: #fff;
+	text-align: center;
+	min-height: 80px;
+	width: 500px;
+	overflow: auto;
+	margin: 20px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#content{
+	min-height: 100px;
+}
+
+#theDate{
+	font-size: 13;
+}
+
+textarea{
+	font-family: helvetica;
+	margin: 1px;
+	width:98%;
+	height: 50px;
+	border: solid grey 2px;
+	border-radius: 3px;
+	resize:none;
+}
+
+input{
+	font-size: 100%;
+	padding-left: 5px;
+	padding-right: 5px;
+	float: right;
+	margin: 1px;
+	margin-right: 7px;
+
+}
+
+p{
+	margin: 0px;
+	padding:0px;
+
+}
+
+span{
+	padding: 0px;
+}
+
+#cancel{
+	display: none;
+}
+
+#messageBase{
+	height: 20px;
+	width: 100%;
+}
+
+#messageContain{
+
+	min-height: 100px;
+	overflow: auto;
+}
+
+.comment{
+	height: 20px;
+	width: 50px;
+	border: solid 1px black;
+}
+
+.post{
+	font-color: blue;
+	
+}
+
+#comments{
+	padding: 5px;
+	border: solid 1px black;
+}
