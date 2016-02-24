@@ -1,4 +1,4 @@
-$(function(){
+/*$(function(){
 	$('textarea').click(function(){
 		console.log("I've been clicked.");
 		$('textarea').css({'height':'250px'});
@@ -9,4 +9,4 @@ $(function(){
 		$('textarea').val('');
 		$('#cancel').css({'display':'none'});
 	});
-});
+});*/

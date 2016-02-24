@@ -50,17 +50,18 @@
 
 				<ul>
 					<li ng-repeat = 'x in result' ><div id ='message'>
-
+<?php if ($_SESSION['captain'] == 'yes') echo"<input type = 'submit' value = 'Delete' ng-click = deletePost(x.0)>" ?>
 						<p id = 'thePoster'> {{ x.3 }} </p>
+                        
 
 						<div  id = 'MessageContain'>
 							<div id = 'theDate'> {{ x.2 }} </div>
 							<span id = 'content'> {{ x.1 }} </span>
-
+						    
 						</div>
 
 
-						<?php if ($_SESSION['captain'] == 'yes') echo"<input type = 'submit' value = 'Delete' ng-click = deletePost(x.0)>" ?>
+
 
 						<div>
 							<ul >
@@ -131,7 +132,9 @@
 							</script>
 
 							<div id = "comments" ng-repeat = 'y in comments' >
-								{{y.2}}
+                                <div id = 'commenter'>{{y.4}} </div>
+								<div id = 'commentCont'>{{y.2}}</div>
+                                <div id = 'commentInfo'>{{y.3}}</div>
 							</div>
 
 							<div>

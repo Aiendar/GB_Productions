@@ -59,6 +59,9 @@ textarea{
 	border-radius: 3px;
 	resize:none;
 }
+textarea:active{
+    height:250px;
+}
 
 input{
 	font-size: 100%;
@@ -101,12 +104,24 @@ span{
 	border: solid 1px black;
 }
 
+#thePoster{
+    color:darkgreen;
+}
+
 .post{
 	font-color: blue;
 	
 }
 
+#commenter{
+    color:darkgreen;
+}
+
 #comments{
 	padding: 5px;
-	border: solid 1px black;
+	background-color:ddd;
+    border: solid 1px white;
+}
+#commentinfo{
+    font-size:75%;
 }
