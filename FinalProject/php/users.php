@@ -6,7 +6,7 @@ $db = new mysqli("127.0.0.1", "administrator", "E6Z570tbYF4plNEhabIF", "GolanBro
 $user = $_SESSION['username'];
 error_log($user);
 error_log('this');
-$query = "SELECT username FROM users WHERE username <> '$user';";
+$query = "SELECT username, bio FROM users WHERE username <> '$user';";
 $res = $db->query($query);
 $num_rows = $db->affected_rows;
 $array = $res->fetch_all(); 

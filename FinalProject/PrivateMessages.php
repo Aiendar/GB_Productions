@@ -6,7 +6,7 @@
 		<link rel = "stylesheet" href = "css/theBase.css">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 		<link rel = "stylesheet" href = "css/PrivateMessages.css">
-	    <body ng-app="" data-ng-controller="getUsers">
+	<body ng-app="" data-ng-controller="getUsers">
 		<header>
 			<ul>
 				<li><a href = 'messageboard.php' id = 'first'><div id = 'logolink' class = 'container'><img src = "img/newlogo.png"/></div></a></li>
@@ -20,42 +20,12 @@
 		</header>
 
 
-		<div id = 'maindiv' >
+		<div id = 'maindiv'>
 			<p> See Messages from:</p>
 			<ul>
 				<div id = 'users'>
-				<li ng-repeat="x in result" >
-                    {{x.0}}
-                    <script>
-                        function messagesController($scope, $http){
-                            var site = "http://localhost";
-
-                            var sessionID = sessionStorage.getItem('sessionID');
-                            $scope.submit = function(){
-                                var page = "/xampp/FinalProject/php/postMessage.php";
-                                var post = $scope.newPost;
-                            }
-                            $scope.readMessages = function(user){
-                                console.log(user);
-                                var site = "http://localhost";
-                                var page = "/xampp/FinalProject/php/getMessages.php";
-                                data = {'user' : user}
-                                $http.post(site + page, data )
-                                .success(function(response, status) {
-                                  $scope.messages = response;
-                                  $scope.status = status;
-                                  console.log($scope.result);
-                                })
-                                .error(function(data, status) {
-                                  $scope.data = data || "Request failed";
-                                  $scope.status = status;
-                                  console.log("epic flail");
-                                });
-                            }
-
-                        }
-                    </script>
-                    <input type = 'submit' value = 'user'ng-controller = 'messagesController'ng-click = 'readMessages(x.0)'/></input>
+				<li ng-repeat="x in result" ng-click="go($index)">
+	                <span><a href = "MessageStream.php?user={{x.0}}">{{ x.0 }}</a></span>
 	            </li>
 	        </div>
 	        </ul>

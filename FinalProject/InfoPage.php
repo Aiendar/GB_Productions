@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+		<script src = "js/jquery-1.11.2.js"></script>
+		<script src="js/users.js" ></script>
   <head>
     <title>Team Info</title>
     <link rel="stylesheet" href="css/theBase.css" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
   </head>
 
-  <body>
+  <body ng-app="" data-ng-controller="getUsers">
       <header>
       <ul>
         <li><a href = 'index.php' id = 'first'><div id = 'logolink' class = 'container'><img src = "img/newlogo.png"/></div></a></li>
@@ -21,7 +24,7 @@
 
 
     <div id="maindiv">
-      <p><strong>Zeptar</strong> - playing tanky, full team lockdown champions such as J4 and Wukong, Zeptar is the Golan Brothers' Beefy teamfight initiator.  </p>
+      <!--<p><strong>Zeptar</strong> - playing tanky, full team lockdown champions such as J4 and Wukong, Zeptar is the Golan Brothers' Beefy teamfight initiator.  </p>
       <p><strong>Champions Played:</strong> Jarvin IV, Wukong, Maokai</p>
 
       <p><strong>Brother Grizzly</strong> - the Golan Brothers' wild card jungler, playing champions ranging from Fiddlesticks to Vi, Brother Grizzly does what (and goes where) his team needs</p>
@@ -34,8 +37,16 @@
       <p><strong>Champions Played:</strong> Sivir, Lucian, Jinx</p>
       <p><strong>theColourC</strong> - </p>
 
-      <p><strong>Champions Played:</strong> Leona, Morgana, Thresh</p>
-      <div>
+      <p><strong>Champions Played:</strong> Leona, Morgana, Thresh</p>-->
+        <ul>
+            <div id = 'users'>
+				<li ng-repeat="x in result">
+	                <span>{{ x.0 }} - {{x.1}} - {{x.2}} - {{x.3}} - {{x.4}} - {{x.5}}</span>
+	            </li>
+	        </div>
+	   </ul>
+        
+      </div>
 
   </body>
 </html>
