@@ -1,6 +1,6 @@
 function getUsers($scope, $http){
 	var site = "http://localhost";
-  	var page = "/xampp/FinalProject/php/users.php";
+  var page = "/xampp/FinalProject/php/users.php";
 	data = "the dater";
   console.log("running");
 	$http.post(site + page, data )
@@ -14,6 +14,11 @@ function getUsers($scope, $http){
       $scope.status = status;
       console.log("epic flail");
     });
+
+  $scope.hideMe = function(item){
+    console.log('hide me');
+    console.log(item);
+  }
   $scope.go = function(item){
     page = "/xampp/FinalProject/php/messages.php";
 

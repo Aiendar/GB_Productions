@@ -1,7 +1,13 @@
 function messageBoardController($scope, $http){
+  angular.module('myApplication', ['infinite-scroll']);
 	var site = "http://localhost";
-  	var page = "/xampp/FinalProject/php/getPosts.php";
-	data = "the dater";
+  var page = "/xampp/FinalProject/php/getPosts.php";
+	 myvar = 5;
+  
+
+  $scope.getPosts = function(){
+  data = {'theIndex' : myvar};
+  console.log(myvar);
 	$http.post(site + page, data )
     .success(function(response, status) {
       $scope.result = response;
@@ -13,6 +19,13 @@ function messageBoardController($scope, $http){
       $scope.status = status;
       console.log("epic flail");
     });
+    myvar+=5;
+  }
+
+  $scope.hideMe = function(){
+    console.log('hide me');
+  }
+
 
     $scope.submitPost = function(){
       var page = "/xampp/FinalProject/php/newPost.php";
@@ -47,6 +60,8 @@ function messageBoardController($scope, $http){
       });
        window.location = 'MessageBoard.php';
     }
+
+
 
     $scope.deletePost = function(item){
       if(item === null){

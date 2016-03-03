@@ -59,9 +59,7 @@ textarea{
 	border-radius: 3px;
 	resize:none;
 }
-textarea:active{
-    height:250px;
-}
+
 
 input{
 	font-size: 100%;
@@ -83,9 +81,6 @@ span{
 	padding: 0px;
 }
 
-#cancel{
-	display: none;
-}
 
 #messageBase{
 	height: 20px;

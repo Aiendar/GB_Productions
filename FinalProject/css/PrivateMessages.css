@@ -1,3 +1,7 @@
+#maindiv{
+	height: 80%;
+}
+
 #users{
 	padding-left: 10%;
 	min-width: 100px;
@@ -5,7 +9,7 @@
 
 #to{
 	margin-left: 10%;
-	min-width: 1000px;
+	min-width: 100px;
 }
 
 #from{
@@ -13,4 +17,73 @@
 	margin-right:150px;
 	min-width:100px;
 
+}
+
+.users{
+	width: 90%;
+	height: 200px;
+}
+
+#usersButton{
+	height: 40px;
+}
+
+#userList{
+	width: 30%;
+	height: 97%;
+}
+
+#messages{
+	float:right;
+	width:50%;
+	height: 97%;
+	margin-right: 18%;
+
+}
+
+#messageList{
+	height: 70%;
+	width: 99.65%;
+	border-style: solid;
+	border-color:  black;
+	border-width:  1px;
+	margin-bottom: 5px;
+	overflow: auto;
+}
+
+#newMessage{
+	margin-left: 24%;
+	float:center;
+	width: 50%;
+	height:20%;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+}
+
+span{
+	margin: 5px;
+}
+
+div{
+	overflow:auto;
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+	display: inline-block;
+}
+
+.message{
+
+	display: block;
+	width: 50%;
+
+	margin: 10px;
+	padding: 10px;
+}
+
+#textBox{
+	
+	display:block;
+	width: 99.25%;
 }

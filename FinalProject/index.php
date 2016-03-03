@@ -15,16 +15,17 @@
 <html>
 	<head>
 		<meta charset = "utf-8">
-		<link rel = 'stylesheet' href = 'css/home.css'/>
 		<link rel = 'stylesheet' href = 'css/theBase.css'/>
+		<link rel = 'stylesheet' href = 'css/home.css'/>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 		<title>Golan Brothers</title>
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-		<script> 
+		<script src='js/jquery-1.11.2.js'></script>
+		<script src='js/NewPost.js'></script>
+		<script src='js/homeController.js'></script>
 
-		</script>
 	</head>
-	<body ng-app="" ng-controller="homeController"  ng-onbeforeunload="logout()">
+	<body ng-app="" ng-controller="homeController">
 
 		<!--Independant header -->
 		<header>
@@ -38,6 +39,13 @@
 				<li/>
 			</ul>
 		</header>
+
+		<script type="text/javascript">
+
+
+
+
+		</script>
 
 
 		<div id = 'maindiv'>
@@ -66,11 +74,26 @@
 				</ul>
 			</div>
 			<div id = 'currentPost'>
-				<div id = 'theText'>text</div>
+				<div id = 'theText'><ul class = 'bulletinList'>
+					<li ng-repeat = 'x in result' class ='bulletinList' >
+
+						
+
+						<div  id = 'message'>
+							<p id = 'thePoster'> {{ x.2 }} </p>
+							<span id = 'content'> {{ x.1 }} </span>	
+							<p id = 'theDate'> {{ x.3 }} </p>
+						<p></p>
+						<div>
+							<?php if ($_SESSION['captain'] == 'yes') echo"<input type = 'submit' value = 'Delete' ng-click = deletePost(x.0)>" ?>
+						</div>
+						</div>
+					</li>
+				</ul></div>
 				
 				<form>
-					<textarea></textarea>
-					<input type = 'submit' value = 'Submit'>
+					<textarea ng-model = 'user.theContent' name = 'bulletin'></textarea>
+					<input type = 'submit' value = 'Submit' ng-click = 'submitBulletin()'>
 				</form>
 			</div>
 		</div>
