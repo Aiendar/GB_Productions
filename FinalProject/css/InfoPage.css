@@ -1,0 +1,6 @@
+#theDiv{
+	display: inline-block;
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+}
