@@ -11,7 +11,7 @@
  	error_log($theUser);
  	$username = $_SESSION['username'];
 	$query = "SELECT sender, content, receiver FROM pmessages WHERE sender =  '$theUser' AND receiver = '$username' OR sender = '$username' and receiver = '$theUser'";
-	$query .= "ORDER BY dateSent;";
+	$query .= "ORDER BY dateSent DESC;";
 	$res = $db->query($query);
 	//error_log($res);
 	$array = $res->fetch_all();

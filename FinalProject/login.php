@@ -21,7 +21,7 @@ session_start();
 			<div id = 'loginBox' ng-app="" data-ng-controller="loginController">
 				<br>
 				<br><br>
-			<form method = 'post'>
+			<form>
 				Username: <input type = 'text' name = 'username' ng-model = 'user.username'><br>
 				Password: <input type = 'password' name = 'password' ng-model = 'user.password'><br>
 				<input type = 'submit' value ='Submit' ng-click = 'login()'><br>

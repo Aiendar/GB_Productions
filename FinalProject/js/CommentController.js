@@ -57,4 +57,33 @@ function commentController($scope, $http){
 
 
 	}
+
+
+
+    $scope.checkForComments = function(postID){
+    var page = "/xampp/FinalProject/php/getNumComments.php";
+
+    console.log('go away');
+   	data = {'postID' : postID};
+    	$http.post(site + page, data )
+		.success(function(response, status) {
+			$scope.numberOfComments = response;
+			$scope.status = status;
+			console.log($scope.numberOfComments);
+			if($scope.numberOfComments == 0)
+				return true;
+			else return false;
+		})
+		.error(function(data, status) {
+			$scope.data = data || "Request failed";
+			$scope.status = status;
+			console.log("epic flail");
+		});
+		return true;
+	}
+
+
+	$scope.testFunction = function(){
+		return true;
+	}
 }

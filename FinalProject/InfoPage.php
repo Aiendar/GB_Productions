@@ -1,15 +1,31 @@
-<!DOCTYPE html>
+<?php
+  session_start();
+  if(isset($_SESSION['access'])){
+    if($_SESSION['access'] == 'yes'){}
+    else{
+      header( 'Location: http://localhost/xampp/FinalProject/login.php' ) ;
+    }
+  }
+  else{
+     header(  'Location: http://localhost/xampp/FinalProject/login.php'  ) ;
+  }
+?>
+
 <html>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-		<script src = "js/jquery-1.11.2.js"></script>
-		<script src="js/users.js" ></script>
+   
   <head>
     <title>Team Info</title>
+    <meta charset = "utf-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src = "js/jquery-1.11.2.js"></script>
+    <script src="js/users.js" ></script>
+    <script src="js/infoPageController.js" ></script>
     <link rel="stylesheet" href="css/theBase.css" />
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' href='css/InfoPage.css'/>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'/>
   </head>
 
-  <body ng-app="" data-ng-controller="getUsers">
+  <body ng-app="" ng-controller="getUsers">
       <header>
       <ul>
         <li><a href = 'index.php' id = 'first'><div id = 'logolink' class = 'container'><img src = "img/newlogo.png"/></div></a></li>
@@ -23,27 +39,12 @@
     </header>
 
 
-    <div id="maindiv">
-      <!--<p><strong>Zeptar</strong> - playing tanky, full team lockdown champions such as J4 and Wukong, Zeptar is the Golan Brothers' Beefy teamfight initiator.  </p>
-      <p><strong>Champions Played:</strong> Jarvin IV, Wukong, Maokai</p>
+    <div id="maindiv"ng-controller='infoPageController'>
 
-      <p><strong>Brother Grizzly</strong> - the Golan Brothers' wild card jungler, playing champions ranging from Fiddlesticks to Vi, Brother Grizzly does what (and goes where) his team needs</p>
-      <p><strong>Champions Played:</strong> Fiddlesticks, Vi, Shen</p>
-
-      <p><strong>Aiendar</strong> - the voice inside all our heads nagging about ganks and shouting about dragons and towers, Aiendar isn't the Yasuo we need, but the one we deserve</p>
-      <p><strong>Champions Played:</strong> Yasuo, Orianna, Azir</p>
-
-      <p><strong>Turarthdur</strong> - As Golan Brothers' most reliable player, and with almost every carry in his arsenal, Turarthdur is damage dealing back line of the team</p>
-      <p><strong>Champions Played:</strong> Sivir, Lucian, Jinx</p>
-      <p><strong>theColourC</strong> - </p>
-
-      <p><strong>Champions Played:</strong> Leona, Morgana, Thresh</p>-->
         <ul>
-            <div id = 'users'>
-				<li ng-repeat="x in result">
-	                <span>{{ x.0 }} - {{x.1}} - {{x.2}} - {{x.3}} - {{x.4}} - {{x.5}}</span>
-	            </li>
-	        </div>
+				    <li ng-repeat="x in result">
+	                <div id ="theDiv" ng-mousedown='hide=true; hideMe()'ng-hide='hide'><p>{{ x.0 }} - {{x.1}} - {{x.2}} - {{x.3}} - {{x.4}} - {{x.5}}</p></div>
+	         </li>
 	   </ul>
         
       </div>

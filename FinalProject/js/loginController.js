@@ -22,7 +22,7 @@ function loginController($scope, $http){
 		    if($scope.result == 'AccessGranted')
 		    {
 
-		    	window.location = site+"/xampp/FinalProject/messageboard.php";
+		    	window.location = site+"/xampp/FinalProject/index.php";
 		    }
 		    else
 		    {

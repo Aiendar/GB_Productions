@@ -77,7 +77,7 @@
 								<textarea ng-model  = "user.comment" ng-mousedown='hideMe(); myStyle2={height: "250px"}; myValue4 = false' ng-style='myStyle2'></textarea>
    								<input type="submit" value = 'Submit'  ng-click = 'submitComment(x.0)'></input>
    								<input type = 'submit' value ='Cancel' id = 'cancel' ng-hide = 'myValue4' ng-click = 'myStyle2 = {}; myValue4 = true; user.comment = ""'>
-   								<input type ='submit' value = 'Show Comments'  ng-click = 'myValue= true; getComments(x.0); myValue2 = false' ng-hide='myValue'/>
+   								<input type ='submit' value = 'Show Comments'  ng-click = 'myValue= true; getComments(x.0);  myValue2 = false' ng-hide='myValue'/>
    								<input type = 'submit' value = 'Hide Comments' ng-click = 'myValue=false; myValue2 = true' ng-hide = 'myValue2' />
 
 							</div>  
@@ -89,6 +89,5 @@
 					<input type="submit" value='More Posts' ng-click = 'getPosts()'>
 				</div>
 			</div>
-
 		</div>
 </html>

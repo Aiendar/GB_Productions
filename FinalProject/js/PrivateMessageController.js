@@ -87,7 +87,23 @@ function privateMessageController($scope, $http){
        //window.location = 'PrivateMessages.php';
     }
 
+    $scope.checkForComments = function(){
+          var page = "/xampp/FinalProject/php/getNumComments.php";
+    $scope.user = userSelected;
+    data = {'theUser' : userSelected};
 
+    $http.post(site + page, data )
+      .success(function(response, status) {
+        $scope.messages = response;
+        $scope.status = status;
+        console.log($scope.result);
+      })
+      .error(function(data, status) {
+        $scope.data = data || "Request failed";
+        $scope.status = status;
+        console.log("epic flail");
+      });
+    }
 
    
 }

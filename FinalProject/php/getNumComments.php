@@ -7,15 +7,15 @@
 	$data = file_get_contents("php://input");
  	$objdata = json_decode($data);
  	$postID = $objdata ->postID;
-	error_log('getComments is getting called');
+	error_log('numComments... I hate you');
 	error_log($postID);
 
 	$query = "SELECT * FROM comments WHERE messageID = '$postID'";
 	$query .= "ORDER BY datePosted;";
 	$res = $db->query($query);
-	$array = $res->fetch_all();
-	//error_log($array);
-	echo json_encode($array);
+	$NumRows = $res->num_rows;
+	error_log($NumRows);
+	echo json_encode($NumRows);
 	//$array = $res->fetch_all();
 	//echo json_encode($array);
 

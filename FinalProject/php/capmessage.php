@@ -7,7 +7,7 @@
 	error_log('capmessage is getting called');
 
 	$query = "SELECT * FROM captainmessages ";
-	$query .= "ORDER BY datePosted DESC LIMIT 1;";
+	$query .= "ORDER BY datePosted DESC LIMIT 5;";
 	$res = $db->query($query);
 	$array = $res->fetch_all();
 	echo json_encode($array);

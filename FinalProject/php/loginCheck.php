@@ -6,7 +6,10 @@
  	$objdata = json_decode($data);
  	$username = $objdata->username;
  	$password = $objdata->password;
- 	error_log($username.$password);
+ 	
+ 	$newPassword = $password; 
+ 	$newPassword = password_hash (  $newPassword ,  PASSWORD_DEFAULT);
+ 	error_log(strlen($newPassword));
  	
 	$db = new mysqli("127.0.0.1", "administrator", "E6Z570tbYF4plNEhabIF", "GolanBrothers")
 		or die("I died ".$db->error);

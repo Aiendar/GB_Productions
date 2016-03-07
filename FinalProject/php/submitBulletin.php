@@ -9,14 +9,24 @@
  	$objdata = json_decode($data);
  	//$output = (string)$objdatthisEventa;
  	$theContent = $objdata->theContent;
+ 	$theTitle = $objdata->theTitle;
  	error_log($theContent);
 
  	$username = $_SESSION['username'];
- 	$query = "INSERT INTO captainmessages (content, posterId) VALUES('$theContent', '$username');";
+ 	//$query = "INSERT INTO captainmessages (content, posterId, title) VALUES('$theContent', '$username', '$theTitle');";
 
- 	$res = $db->query($query);
+ 	$stmt = $db->prepare("INSERT INTO captainmessages(content, posterId, title) VALUES(?, ?, ?)");
+ 	$stmt->bind_param("sss", $theContent, $username, $theTitle);
+ 	$stmt->execute();
+ 	$stmt->close();
+ 	//$query = "INSERT INTO messages (content, posterId) VALUES('$theContent', '$username');";
 
+ 	//$res = $db->query($query);
+
+ 	
  	error_log($db->error);
+ 	$db->close();
+
 
 
 ?>

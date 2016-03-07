@@ -25,7 +25,7 @@
 		<script src='js/homeController.js'></script>
 
 	</head>
-	<body ng-app="" ng-controller="homeController">
+	<body ng-app="" ng-controller="homeController" ng-init = 'getBulletins(); '>
 
 		<!--Independant header -->
 		<header>
@@ -50,51 +50,33 @@
 
 		<div id = 'maindiv'>
 			<div id = 'oldPosts'>
-				<ul>
-					<li >
-						<div class = 'oldPostItem'>
-							text
-						</div>
-					</li>
-					<li >
-						<div class = 'oldPostItem'>
-							text
-						</div>
-					</li>
-					<li >
-						<div class = 'oldPostItem'>
-							text
-						</div>
-					</li>
-					<li >
-						<div class = 'oldPostItem'>
-							text
-						</div>
-					</li>
-				</ul>
+				<div class = 'oldPostItem' ng-repeat ='x in result' ng-click = 'updateCurrentPost(x.5, x)' ng-if='currentPost != x.5'>
+					<span id = 'thePoster'> {{ x.2 }} </span>
+					<span id = 'content'> {{ x.1 }} </span>	
+					<span id = 'theDate'> {{ x.3 }} </span>
+				</div>
 			</div>
 			<div id = 'currentPost'>
-				<div id = 'theText'><ul class = 'bulletinList'>
-					<li ng-repeat = 'x in result' class ='bulletinList' >
-
+				<div id = 'theText'>
 						
 
 						<div  id = 'message'>
-							<p id = 'thePoster'> {{ x.2 }} </p>
-							<span id = 'content'> {{ x.1 }} </span>	
-							<p id = 'theDate'> {{ x.3 }} </p>
+						<div id = 'title'>{{insert.4}}</div>
+						<p>{{insert.1}}</p>
+						<span>{{insert.2}} {{insert.3}}</span>
 						<p></p>
-						<div>
-							<?php if ($_SESSION['captain'] == 'yes') echo"<input type = 'submit' value = 'Delete' ng-click = deletePost(x.0)>" ?>
+						
+							<?php if ($_SESSION['captain'] == 'yes') echo"<div><input type = 'submit' value = 'Delete' ng-click = deletePost(currentPost)></div>" ?>
+						
 						</div>
 						</div>
-					</li>
-				</ul></div>
+				<?php
+				$theString = "<form><input type = 'text' ng-model = 'theTitle' placeholder = 'Title...'></input>";				
+				$theString .= "<textarea ng-model = 'user.theContent' name = 'bulletin' placeholder = 'Text...'></textarea>";
+				$theString .= "<input type = 'submit' value = 'Submit' ng-click = 'submitBulletin()'></form>";
+				if ($_SESSION['captain'] == 'yes') echo $theString;
 				
-				<form>
-					<textarea ng-model = 'user.theContent' name = 'bulletin'></textarea>
-					<input type = 'submit' value = 'Submit' ng-click = 'submitBulletin()'>
-				</form>
+				?>
 			</div>
 		</div>
 	</body>

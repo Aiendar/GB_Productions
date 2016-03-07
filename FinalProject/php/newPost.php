@@ -9,16 +9,30 @@
  	$objdata = json_decode($data);
  	//$output = (string)$objdatthisEventa;
  	$theContent = $objdata->theContent;
- 	$thisDate = $objdata ->theDateTime;
  	error_log($theContent);
- 	error_log($thisDate);
+
 
  	$username = $_SESSION['username'];
- 	$query = "INSERT INTO messages (content, posterId) VALUES('$theContent', '$username');";
 
- 	$res = $db->query($query);
+ 	$stmt = $db->prepare("INSERT INTO messages(content, posterID) VALUES(?, ?)");
+ 	$stmt->bind_param("ss", $theContent, $username);
+ 	$stmt->execute();
+ 	$stmt->close();
+ 	//$query = "INSERT INTO messages (content, posterId) VALUES('$theContent', '$username');";
 
+ 	//$res = $db->query($query);
+
+ 	
  	error_log($db->error);
+ 	$db->close();
 
+
+/*
+$stmt = $conn->prepare("INSERT INTO MyGuests (firstname, lastname, email) VALUES (?, ?, ?)");
+;
+*/
 
 ?>
+
+
+

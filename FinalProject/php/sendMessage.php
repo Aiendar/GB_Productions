@@ -14,11 +14,20 @@
  	error_log($theUser);
 
  	$username = $_SESSION['username'];
- 	$query = "INSERT INTO pmessages (content, sender, receiver) VALUES('$theContent', '$username', '$theUser');";
+ 	//$query = "INSERT INTO pmessages (content, sender, receiver) VALUES('$theContent', '$username', '$theUser');";
+ 	$stmt = $db->prepare("INSERT INTO pmessages(content, sender, receiver) VALUES(?, ?, ?)");
+ 	$stmt->bind_param("sss", $theContent, $username, $theUser);
+ 	$stmt->execute();
+ 	$stmt->close();
+ 	//$query = "INSERT INTO messages (content, posterId) VALUES('$theContent', '$username');";
 
- 	$res = $db->query($query);
+ 	//$res = $db->query($query);
 
+ 	
  	error_log($db->error);
+ 	$db->close();
+
+
 
 
 ?>

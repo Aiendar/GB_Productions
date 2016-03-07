@@ -24,7 +24,7 @@
 	<body ng-app="" ng-controller = "privateMessageController" ng-init = 'getUsers(); myStyle = {"border-color" : "blue"}'>
 		<header>
 			<ul>
-				<li><a href = 'messageboard.php' id = 'first'><div id = 'logolink' class = 'container'><img src = "img/newlogo.png"/></div></a></li>
+				<li><a href = 'index.php' id = 'first'><div id = 'logolink' class = 'container'><img src = "img/newlogo.png"/></div></a></li>
 				<a href = "messageboard.php"><li>Message Board</li></a>
 				<a href = "Schedule.php"><li>Schedule</li></a>
 				<a href = "PrivateMessages.php"><li>Private Messages</li></a>
